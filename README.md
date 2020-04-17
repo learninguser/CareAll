@@ -6,3 +6,5 @@ Retired folks make themselves available for care, young can earn by taking care.
 3. Young folks can earn money monthly by choosing oldies to take care of. But, adult needs to approve the young who they trust to take care of them.
 4. Both types of users have reviews & rating.
 5. There is a limit of 4 elders per young to take care of.
+
+Video Explanation: https://www.youtube.com/watch?v=XCiKECTqLeY
