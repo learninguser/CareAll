@@ -20,20 +20,38 @@ class User:
 
         User.updateUsersList(self.__id, self.__name, self.__age, self.__role)
 
-    def user_registration(self, email, password):
+    def getRole(self):
+        return self.__role
+    
+    def getName(self):
+        return self.__name
+
+    def getId(self):
+        return self.__id
+    
+    def getAge(self):
+        return self.__age
+    
+    def register(self, email, password):
         if email in User.emails.keys():
             print("User already registered in the system please login with your credentials")
-            return 2
+            
         else:
             self.setEmail(email)
             self.setPassword(password)
             User.credentials(self.__email, self.__password)
+            print("Registration Successful")
     
     def login(self, email, password):
         if User.emails[email] == password:
-            return "Logged in"
+            print("Logged in successfully")
+            return 1
+        elif email not in User.emails.keys():
+            print("User doesn't exsist")
+            return 0
         else:
-            return "Invalid Credentials"
+            print("Invalid Credentials")
+            return -1
     
     def setEmail(self, email):
         self.__email = email

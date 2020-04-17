@@ -1,10 +1,33 @@
 from profile import User
 
 class ElderFolk(User):
-    def __init__(self):
+    elderFolks = []
+
+    @classmethod
+    def updateElders(cls, elder):
+        cls.elderFolks.append(elder)
+
+    def __init__(self, id, name, age, role):
+        self.__id = id
+        self.__name = name
+        self.__age = age
+        self.__role = role
         self.__isAvailable = True
         self.__allocateFunds = 0
-        self.__approveFolk = False        
+        self.__approveFolk = False      
+        ElderFolk.updateElders(self)
+    
+    def getRole(self):
+        return self.__role
+    
+    def getName(self):
+        return self.__name
+
+    def getId(self):
+        return self.__id
+    
+    def getAge(self):
+        return self.__age
 
     def setAvailabilty(self, availabilty):
         self.__isAvailable = availabilty
