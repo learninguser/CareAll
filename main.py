@@ -53,64 +53,76 @@ young3 = YoungFolk('y3','Swetcha',20,'provider')
 young4 = YoungFolk('y4','Krishna',24,'provider')
 young5 = YoungFolk('y5','Sunil',27,'provider')
 
-young1.register("abc@gmail.com","123456789")
-young1.login("abc@gmail.com","123456789")
-
 # elder1.setAvailabilty(False)
-elder5.setAvailabilty(False)
+# elder2.setAvailabilty(False)
+# elder3.setAvailabilty(False)
+# elder4.setAvailabilty(False)
+# elder5.setAvailabilty(False)
 # elder8.setAvailabilty(False)
 # elder14.setAvailabilty(False)
 
-res = young1.applyForService(elder2)
-if res:
-    elder2.setApproveFolk(True)
-    if not young1.setOlideTakenCareOf(elder2):
-        young1.setSalary(1000)
-        elder2.setFunds(-1000)
-        elder2.setAvailabilty(False)
+young1.register("abc@gmail.com","123456789")
+if young1.login("abc@gmail.com","123456789"):
 
-res = young1.applyForService(elder1)
-if res:
-    elder1.setApproveFolk(True)
-    if not young1.setOlideTakenCareOf(elder1):
-        young1.setSalary(1000)
-        elder1.setFunds(-1000)
-        elder1.setAvailabilty(False)
+    res = young1.applyForService(elder2)
+    if res:
+        elder2.setApproveFolk(True)
+        if not young1.setOlideTakenCareOf(elder2):
+            young1.setSalary(1000)
+            elder2.setFunds(-1000)
+            elder2.setAvailabilty(False)
 
-res = young1.applyForService(elder3)
-if res:
-    elder3.setApproveFolk(True)
-    if not young1.setOlideTakenCareOf(elder3):
-        young1.setSalary(1000)
-        elder3.setFunds(-1000)
-        elder3.setAvailabilty(False)
+    res = young1.applyForService(elder1)
+    if res:
+        elder1.setApproveFolk(True)
+        if not young1.setOlideTakenCareOf(elder1):
+            young1.setSalary(1000)
+            elder1.setFunds(-1000)
+            elder1.setAvailabilty(False)
 
-res = young1.applyForService(elder5)
-if res:
-    elder5.setApproveFolk(True)
-    if not young1.setOlideTakenCareOf(elder5):
-        young1.setSalary(1000)
-        elder5.setFunds(-1000)
-        elder5.setAvailabilty(False)
+    res = young1.applyForService(elder3)
+    if res:
+        elder3.setApproveFolk(True)
+        if not young1.setOlideTakenCareOf(elder3):
+            young1.setSalary(1000)
+            elder3.setFunds(-1000)
+            elder3.setAvailabilty(False)
 
-res = young1.applyForService(elder4)
-if res:
-    elder4.setApproveFolk(True)
-    if not young1.setOlideTakenCareOf(elder4):
-        young1.setSalary(1000)
-        elder4.setFunds(-1000)
-        elder4.setAvailabilty(False)
+    res = young1.applyForService(elder5)
+    if res:
+        elder5.setApproveFolk(True)
+        if not young1.setOlideTakenCareOf(elder5):
+            young1.setSalary(1000)
+            elder5.setFunds(-1000)
+            elder5.setAvailabilty(False)
 
-print(young1.getOlideTakenCareof())
-print(young1.getSalary())
+    res = young1.applyForService(elder4)
+    if res:
+        elder4.setApproveFolk(True)
+        if not young1.setOlideTakenCareOf(elder4):
+            young1.setSalary(1000)
+            elder4.setFunds(-1000)
+            elder4.setAvailabilty(False)
 
-res = young2.applyForService(elder4)
-if res:
-    elder4.setApproveFolk(True)
-    if not young2.setOlideTakenCareOf(elder4):
-        young2.setSalary(1000)
-        elder4.setFunds(-1000)
-        elder4.setAvailabilty(False)
+    young1.setRating(5)
+    young1.setRating(4)
+    young1.setRating(5)
+    young1.setRating(4.5)
+    young1.setReview("The Best")
 
-print(young2.getOlideTakenCareof())
-print(young2.getSalary())
+    print(young1.getOlideTakenCareof())
+    print(young1.getSalary())
+    print(young1.finalRating())
+
+young2.register("bcd@gmail.com","123456789")
+if young2.login("bcd@gmail.com","123456789"):
+    res = young2.applyForService(elder4)
+    if res:
+        elder4.setApproveFolk(True)
+        if not young2.setOlideTakenCareOf(elder4):
+            young2.setSalary(1000)
+            elder4.setFunds(-1000)
+            elder4.setAvailabilty(False)
+
+    print(young2.getOlideTakenCareof())
+    print(young2.getSalary())

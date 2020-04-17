@@ -7,11 +7,11 @@ class User:
 
     usersList = []
     @classmethod
-    def updateUsersList(cls, id, name, age, role):
-        cls.usersList.append([id, name, age, role])
+    def updateUsersList(cls, uid, name, age, role):
+        cls.usersList.append([uid, name, age, role])
 
-    def __init__(self, id, name, age, role):
-        self.__id = id
+    def __init__(self, uid, name, age, role):
+        self.__id = uid
         self.__name = name
         self.__age = age
         self.__role = role
@@ -43,16 +43,16 @@ class User:
             print("Registration Successful")
     
     def login(self, email, password):
-        if User.emails[email] == password:
-            print("Logged in successfully")
-            return 1
-        elif email not in User.emails.keys():
+        try:
+            if User.emails[email] == password:
+                print("Logged in successfully")
+                return True
+            elif User.emails[email] == password:
+                print("Invalid Credentials")
+                return False
+        except KeyError:
             print("User doesn't exsist")
-            return 0
-        else:
-            print("Invalid Credentials")
-            return -1
-    
+            return False
     def setEmail(self, email):
         self.__email = email
     
@@ -64,15 +64,3 @@ class User:
 
     def getPassword(self):
         return self.__password
-    
-    def setRating(self, rating):
-        self.__rating = rating
-    
-    def getRating(self, rating):
-        return self.__rating
-    
-    def setReview(self, review):
-        self.__review.append(review)
-
-    def getReview(self):
-        return self.__review

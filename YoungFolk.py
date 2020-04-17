@@ -16,8 +16,28 @@ class YoungFolk(User):
         self.__oldieCount = 0
         self.__oldieTakingCareof = []
         self.__salary = 0
+        self.__rating = 0
+        self.__review = []
+        self.__ratingCount = 0
         YoungFolk.updateYoung(self)
     
+    def setRating(self, rating):
+        self.__rating += rating
+        self.__ratingCount += 1
+    
+    def getRating(self):
+        return self.__rating
+    
+    def finalRating(self):
+        self.__rating = self.getRating()/self.__ratingCount
+        return self.__rating
+    
+    def setReview(self, review):
+        self.__review.append(review)
+
+    def getReview(self):
+        return self.__review
+
     def getRole(self):
         return self.__role
     
